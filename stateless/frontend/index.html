@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!-- HTML5文書であることを宣言 -->
+<html lang="ja"> <!-- 日本語のHTMLドキュメントであることを指定 -->
+<head>
+  <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定 - 日本語を含む多言語対応 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応のためのビューポート設定 -->
+  <title>MCP Stateless Client</title> <!-- ブラウザのタブに表示されるページタイトル -->
+  <link rel="stylesheet" href="styles.css"> <!-- 外部CSSファイルの読み込み - ページのスタイルを定義 -->
+</head>
+<body>
+  <div class="container"> <!-- メインコンテンツを包含するコンテナ要素 - 中央配置やサイズ制限のために使用 -->
+    <h1>MCP Stateless Client</h1> <!-- ページの主見出し - MCPステートレスクライアントのタイトル -->
+    
+    <div class="card"> <!-- カードスタイルのコンテナ - ツール一覧機能を視覚的にグループ化 -->
+      <h2>ツール一覧</h2> <!-- カードの見出し - この機能がツール一覧を表示することを示す -->
+      <button id="list-tools-btn">ツール一覧を取得</button> <!-- ツール一覧取得ボタン - クリックするとサーバーからツール一覧を取得 -->
+      <div id="tools-list" class="result-area"></div> <!-- ツール一覧の結果表示エリア - JavaScriptによって動的に内容が更新される -->
+    </div>
+    
+    <div class="card"> <!-- カードスタイルのコンテナ - サイコロツール機能を視覚的にグループ化 -->
+      <h2>サイコロツール</h2> <!-- カードの見出し - この機能がサイコロツールであることを示す -->
+      <div class="form-group"> <!-- フォーム要素のグループ化 - ラベルと入力フィールドをまとめる -->
+        <label for="sides">サイコロの面の数:</label> <!-- 入力フィールドのラベル - サイコロの面数を指定することを示す -->
+        <input type="number" id="sides" min="1" value="6"> <!-- 数値入力フィールド - 最小値1、デフォルト値6のサイコロの面数入力 -->
+      </div>
+      <button id="roll-dice-btn">サイコロを振る</button> <!-- サイコロを振るボタン - クリックするとサーバー上のdiceツールを実行 -->
+      <div id="dice-result" class="result-area"></div> <!-- サイコロの結果表示エリア - JavaScriptによって動的に内容が更新される -->
+    </div>
+  </div>
+  
+  <script src="script.js"></script> <!-- 外部JavaScriptファイルの読み込み - ページの動的な機能を実装 -->
+</body>
+</html>

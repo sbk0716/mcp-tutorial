@@ -1,0 +1,31 @@
+/* TailwindCSSをインポート - ユーティリティファーストのCSSフレームワーク */
+@import "tailwindcss";
+
+/* ライトモード（デフォルト）のカラー変数を定義 */
+:root {
+  --background: #ffffff; /* 背景色 - 白色 */
+  --foreground: #171717; /* 前景色（テキスト）- 濃いグレー */
+}
+
+/* テーマ変数をインライン定義 - カスタムプロパティを統一的に管理 */
+@theme inline {
+  --color-background: var(--background); /* 背景色をルート変数から参照 */
+  --color-foreground: var(--foreground); /* 前景色をルート変数から参照 */
+  --font-sans: var(--font-geist-sans); /* サンセリフフォントをlayout.tsxで定義した変数から参照 */
+  --font-mono: var(--font-geist-mono); /* モノスペースフォントをlayout.tsxで定義した変数から参照 */
+}
+
+/* ダークモード設定 - システム設定に基づいて自動的に切り替え */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* ダークモードの背景色 - 濃い黒 */
+    --foreground: #ededed; /* ダークモードの前景色 - 明るいグレー */
+  }
+}
+
+/* ボディ要素のベーススタイル */
+body {
+  background: var(--background); /* 背景色を変数から適用 - テーマ切り替えに対応 */
+  color: var(--foreground); /* テキスト色を変数から適用 - テーマ切り替えに対応 */
+  font-family: Arial, Helvetica, sans-serif; /* フォールバックフォントを指定 */
+}
